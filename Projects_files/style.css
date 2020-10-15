@@ -1,0 +1,298 @@
+/* ---------------------------------------*/
+/*---------BODY (ENTIRE WEBPAGE)----------*/
+/* ---------------------------------------*/
+
+html
+{
+    background-image: url("../images/background.jpg");
+    backdrop-filter: blur(5px);
+    background-size: cover;
+
+}
+
+body
+{
+    text-align: center;
+
+    /*Top + bottom margins = 0, left + right margins = auto */
+    margin: 0 auto;
+
+
+    background-color:#C0E8B3;
+    font-family: 'Times New Roman', Times, serif;
+
+    display: flex;
+    flex-direction: column;
+
+    min-height: 100vh;
+    height: 100%;
+}
+
+/* ---------------------------------------*/
+/*---------Navigation Bar-----------------*/
+/* ---------------------------------------*/
+header
+{
+ 
+    align-items: baseline;
+    background-color: #DAF1D3;
+    width:100%
+}
+.title
+{
+    font-family: 'Cedarville Cursive', cursive; 
+    font-size: 100px;
+    line-height: 60%;
+    margin-top:2% ;
+    
+}
+.subtitle{
+    
+    font-size:20px;
+ 
+}
+.author
+{
+    font-family: 'Times New Roman', Times, serif;
+    font-size:15px;
+    line-height:40%;
+}
+
+#current_link
+{
+    color: #f35626;
+    background-image: -webkit-linear-gradient(92deg,#f35626,#feab3a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: hue 1s infinite linear;
+}
+nav{
+margin-top: 1%;
+  font-size:15px;
+  border-top: 1px solid#2f4052;
+  border-bottom: 1px solid#2f4052;
+}
+ul.navbar li
+{
+    display: inline;
+    padding: 1px 60px 1px 1px;
+}
+
+ul.navbar li a 
+{
+    color: #2f4052;
+    text-decoration: none;
+ 
+}
+
+ul.navbar li a:visited 
+{
+    color: #2f4052;
+    
+}
+
+/*User tabs to link */
+/* ul.navbar li a:focus 
+{
+    color: #f35626;
+    background-image: -webkit-linear-gradient(92deg,#f35626,#feab3a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: hue .5s infinite linear;
+} */
+
+/* ul.navbar li a:hover 
+{
+    color: #f35626;
+    background-image: -webkit-linear-gradient(92deg,#f35626,#feab3a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: hue 5s infinite linear;
+} */
+
+@-webkit-keyframes hue {
+    from {
+      -webkit-filter: hue-rotate(0deg);
+    }
+    
+    to {
+      -webkit-filter: hue-rotate(360deg);
+    }
+}
+
+/* ul.navbar li a:active 
+{
+    color: #f35626;
+    background-image: -webkit-linear-gradient(92deg,#f35626,#feab3a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: hue 5s infinite linear;     
+} */
+
+/* ---------------------------------------*/
+/*---------LINKS--------------------------*/
+/* ---------------------------------------*/
+
+a 
+{
+    color:green;
+    text-decoration: none;
+}
+
+a:visited 
+{
+    color:green;
+}
+
+a:focus 
+{
+    color: #f35626;
+    background-image: -webkit-linear-gradient(92deg,#f35626,#feab3a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: hue 1s infinite linear;
+}
+
+a:hover 
+{
+    color: #f35626;
+    background-image: -webkit-linear-gradient(92deg,#f35626,#feab3a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: hue 1s infinite linear;
+}
+
+/* ---------------------------------------*/
+/*---------MAIN---------------------------*/
+/* ---------------------------------------*/
+main
+{
+
+    flex: 7;
+     padding: 25px 50px 0px 50px;
+     overflow: hidden;
+}
+
+#main_about
+{
+    display: flex;
+    margin: 30px;
+
+}
+#wrapper{
+    widows: 100%;
+    overflow:hidden
+}
+#project_grid
+{
+    display: grid;
+
+    /*Both included, grid-gap is to support older versions */
+    grid-gap: 50px;
+
+    margin-bottom: 50px;
+    margin-top: 20px;
+    float:left;
+    
+}
+
+/* Container of each project */
+#project_grid div
+{
+    padding: 10px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    text-align: center;
+
+    
+}
+
+#project_grid div img.project_img:hover
+{
+    color: #f35626;
+    background-image: -webkit-linear-gradient(92deg,#f35626,#feab3a);
+    -webkit-background-clip: text;
+    -webkit-animation: hue 1s infinite linear;
+}
+
+
+/* Images inside project */
+#project_grid div .project_img
+{   
+    /*Alternative solution??
+    
+    Without the min-width 99%, paththink image does not stretch far enough
+    Without the max-width as 100%, then the cj's datastructure image goes TOO FAR 
+    */
+ 
+
+    min-height: 300px;
+    max-height: 450px;
+    object-fit: scale-down;
+}
+
+/*****************************************************/
+/*Header of each project (Title and year) */
+#project_grid div .title_same_line
+{
+    display: flex;
+    border: none;
+    padding: 0;
+
+    /* Place title and year of creation to far left and far right */
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+
+}
+
+#project_grid div p
+{
+    padding: 0;
+}
+
+/*****************************************************/
+/*Footer of project (technologies used with images)  */
+#project_grid div .technologies_same_line
+{
+    display: flex;
+    flex-direction: row;
+    border: none;
+    padding: 0;
+
+    /* Align items at the bottom ( same distance from border) */
+    position: absolute; 
+    bottom: 0;
+    
+
+    align-self: flex-end;
+    align-items: center;
+
+}
+
+#project_grid div .technologies_same_line img
+{
+    margin-left: 4px;
+    
+}
+
+#alphabetBackground{
+
+    word-wrap: break-word;
+
+}
+
+/* ---------------------------------------*/
+/*---------FOOTER-------------------------*/
+/* ---------------------------------------*/
+footer
+{
+    background-color: #a3b3b6;
+    flex: 1;
+    align-items: center;
+
+    /*Because body has margins */
+    margin: 0px -50px 0px -50px;
+}

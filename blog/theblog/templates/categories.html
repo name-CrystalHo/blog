@@ -13,14 +13,7 @@
 
             <div class=title>
              Caitlin Gerrard
-             <!-- <div class=subtitle>
-                splurges of the self-eating brain
-                </div>  -->
             </div>
-            <!-- <div class=author>
-                Caitlin Gerrard
-            </div> -->
-
             <nav>
                 <ul class="navbar">
                     {%if cat_menu%}
@@ -51,7 +44,18 @@
                      
                 </p> -->
             </div>
-            {%if category_posts%}
+            {% if 'about' in curr_url%}
+ <!-- CREATE ABOUT ME PAGE HERE!!!!!!!!!!!! -->
+
+
+            
+
+            <h1>About me</h1>
+
+
+
+<!-- CREATE ABOUT ME PAGE HERE!!!!!!!!!!!! -->
+            {%elif category_posts%}
             <div id="project_grid">
                 <!-- Own Website -->
                 {% for post in category_posts%}

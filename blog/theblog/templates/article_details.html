@@ -1,0 +1,38 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <title>Caitlin's Blog</title>
+        <link rel="stylesheet" href="{%static 'theblog/style.css'%}">
+        <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Tangerine' rel='stylesheet'>
+    </head>
+    
+    <body>
+        <header>
+
+            <div class=title>
+             Caitlin Gerrard
+             <!-- <div class=subtitle>
+                splurges of the self-eating brain
+                </div>  -->
+            </div>
+            <nav>
+                <ul class="navbar">
+                    {%if cat_menu%}
+                    {%for item in cat_menu%}       
+                    <li class="{% if item|slugify in curr_url%}active{%endif%}"><a href="{% url 'category' item|slugify%}">{{item}}</a></li>
+                    {%endfor%}
+                    {%endif%}
+                  </ul>
+            </nav>
+        </header>
+    <main>
+        <div id="alphabetBackground">
+        </div> 
+        {%if post.cover_image%}
+        <img class="article" src="{{post.article_image.url}}" ></a>
+        {%endif%}
+    </main>
+</body></html>

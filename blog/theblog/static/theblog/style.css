@@ -4,7 +4,7 @@
 
 html
 {
-    background-image: url("../images/background.jpg");
+   
     backdrop-filter: blur(5px);
     background-size: cover;
 
@@ -16,14 +16,10 @@ body
 
     /*Top + bottom margins = 0, left + right margins = auto */
     margin: 0 auto;
-
-
     background-color:#C0E8B3;
     font-family: 'Times New Roman', Times, serif;
-
     display: flex;
     flex-direction: column;
-
     min-height: 100vh;
     height: 100%;
 }
@@ -36,19 +32,20 @@ header
  
     align-items: baseline;
     background-color: #DAF1D3;
-    width:100%
+    width:100%;
+    height:10%;
 }
 .title
 {
     font-family:'Tangerine'; 
-    font-size: 150px;
-    line-height: 60%;
-    margin-top:3% ;
-    
+    font-size: 60px; 
+    margin-top:1%;  
 }
-.subtitle{
-    
-    font-size:25px;
+.horse{
+   height:55px;
+   width:50px;
+   object-fit: cover
+   
  
 }
 .author
@@ -59,7 +56,7 @@ header
  
 }
 
-#current_link
+.active
 {
     color: #f35626;
     background-image: -webkit-linear-gradient(92deg,#f35626,#feab3a);
@@ -68,46 +65,32 @@ header
     -webkit-animation: hue 1s infinite linear;
 }
 nav{
-margin-top: 1%;
-  font-size:15px;
 
+  font-size:15px;
+  text-transform: uppercase;
+ 
+  /* border-top: 1px solid#2f4052;
+  border-bottom: 1px solid#2f4052; */
 }
 ul.navbar li
 {
     display: inline;
     padding: 1px 60px 1px 1px;
 }
+
 ul.navbar li a 
 {
     color: #2f4052;
-    text-transform:uppercase;
+    text-decoration: none;
+    text-transform: uppercase;
  
 }
 
 ul.navbar li a:visited 
 {
     color: #2f4052;
-    
 }
 
-/*User tabs to link */
-/* ul.navbar li a:focus 
-{
-    color: #f35626;
-    background-image: -webkit-linear-gradient(92deg,#f35626,#feab3a);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -webkit-animation: hue .5s infinite linear;
-} */
-
-/* ul.navbar li a:hover 
-{
-    color: #f35626;
-    background-image: -webkit-linear-gradient(92deg,#f35626,#feab3a);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -webkit-animation: hue 5s infinite linear;
-} */
 
 @-webkit-keyframes hue {
     from {
@@ -119,14 +102,14 @@ ul.navbar li a:visited
     }
 }
 
-/* ul.navbar li a:active 
+ul.navbar li a:active 
 {
     color: #f35626;
     background-image: -webkit-linear-gradient(92deg,#f35626,#feab3a);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     -webkit-animation: hue 5s infinite linear;     
-} */
+}
 
 /* ---------------------------------------*/
 /*---------LINKS--------------------------*/
@@ -166,45 +149,42 @@ nav a:hover
 /* ---------------------------------------*/
 main
 {
-    /* background: url('android.png'); */
    
     flex: 7;
+    position: relative;
+  
   
 }
 
 #alphabetBackground
 {
-    position: absolute;
-    opacity: .1;
-    font-family: 'Tangerine';
-    display:table-row;
-    overflow-y:hidden; 
-    height:315%;
-   
-   
-    
 
+ height:100%;
+ width:100%;
+position:absolute;
+ background: url('background.jpg');
+ background-size: 100px;
+ opacity:.08;
 }
-#alphabetBackground p  {
-    display:table-row;
-    font-size:30px;
-    margin:0;
-    overflow:hidden; 
-   word-break: break-all;
 
-    
+.article{
+    object-fit: cover;
+    margin-right: auto;
+    margin-left: auto;
+    width:90%;
+    position:relative;
+   
 }
 #project_grid
 {
-  
+    margin-left: 2%;
+    margin-right: 2%;
     display: grid;
+     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); 
+    grid-gap: 10px;
     z-index:100;
-    /*Both included, grid-gap is to support older versions */
-    grid-gap: 50px;
-
-    margin-bottom: 50px;
-    margin-top: 20px;
-
+    height: 50%;
+    position: relative; 
     
 }
 
@@ -215,11 +195,9 @@ main
     text-align: left;
     display: flex;
     flex-direction: column;
-    position: relative;
     text-align: center;
-   
-    
-    
+    position: relative;
+
 }
 
 
@@ -230,6 +208,12 @@ main
     -webkit-background-clip: text;
     -webkit-animation: hue 1s infinite linear;
     
+}
+#project_grid div h2{
+    font-weight: normal;
+    font-size:15px;
+    text-transform:uppercase;
+
 }
 #project_grid div h2:hover
 {
@@ -245,17 +229,14 @@ main
 /* Images inside project */
 #project_grid div .project_img
 {   
-    /*Alternative solution??
-    
-    Without the min-width 99%, paththink image does not stretch far enough
-    Without the max-width as 100%, then the cj's datastructure image goes TOO FAR 
-    */
- 
 
-    min-height: 300px;
-    max-height: 450px;
-    object-fit: scale-down;
+    height:350px;
+    width:350px;
+   border-style:outset;
+   border-width:.6px;
+    
 }
+
 
 /*****************************************************/
 /*Header of each project (Title and year) */
@@ -263,19 +244,15 @@ main
 {
     display: flex;
     border: none;
+    font-weight: bold;
     padding: 0;
-
-    /* Place title and year of creation to far left and far right */
-    justify-content: space-between;
     align-items: center;
     text-align: center;
+    color:rgb(58, 57, 57);
 
 }
 
-#project_grid div p
-{
-    padding: 0;
-}
+
 
 /*****************************************************/
 /*Footer of project (technologies used with images)  */

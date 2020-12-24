@@ -4,7 +4,7 @@
 
 html
 {
-    background-image: url("../images/background.jpg");
+    background-image: url("../media/background.jpg");
     backdrop-filter: blur(5px);
     background-size: cover;
 
@@ -12,6 +12,7 @@ html
 
 body
 {
+   
     text-align: center;
 
     /*Top + bottom margins = 0, left + right margins = auto */
@@ -59,7 +60,7 @@ header
  
 }
 
-#current_link
+.active
 {
     color: #f35626;
     background-image: -webkit-linear-gradient(92deg,#f35626,#feab3a);
@@ -70,17 +71,22 @@ header
 nav{
 margin-top: 1%;
   font-size:15px;
-
+  text-transform: uppercase;
+ 
+  /* border-top: 1px solid#2f4052;
+  border-bottom: 1px solid#2f4052; */
 }
 ul.navbar li
 {
     display: inline;
     padding: 1px 60px 1px 1px;
 }
+
 ul.navbar li a 
 {
     color: #2f4052;
-    text-transform:uppercase;
+    text-decoration: none;
+    text-transform: uppercase;
  
 }
 
@@ -119,14 +125,14 @@ ul.navbar li a:visited
     }
 }
 
-/* ul.navbar li a:active 
+ul.navbar li a:active 
 {
     color: #f35626;
     background-image: -webkit-linear-gradient(92deg,#f35626,#feab3a);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     -webkit-animation: hue 5s infinite linear;     
-} */
+}
 
 /* ---------------------------------------*/
 /*---------LINKS--------------------------*/
@@ -166,9 +172,9 @@ nav a:hover
 /* ---------------------------------------*/
 main
 {
-    /* background: url('android.png'); */
-   
+
     flex: 7;
+    background: url('media/background.jpg');
   
 }
 
@@ -191,6 +197,7 @@ main
     margin:0;
     overflow:hidden; 
    word-break: break-all;
+   
 
     
 }
@@ -204,6 +211,7 @@ main
 
     margin-bottom: 50px;
     margin-top: 20px;
+    height: 50%;
 
     
 }
@@ -215,7 +223,6 @@ main
     text-align: left;
     display: flex;
     flex-direction: column;
-    position: relative;
     text-align: center;
    
     

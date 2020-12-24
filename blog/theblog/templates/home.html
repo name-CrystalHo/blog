@@ -1,0 +1,53 @@
+{% load static %}
+{% load admin_urls %}
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <title>Caitlin's Blog</title>
+        <link rel="stylesheet" href="{%static 'theblog/style.css'%}">
+        <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Tangerine' rel='stylesheet'>
+    </head>
+    
+    <body>
+        <header>
+
+            <div class=title>
+             Caitlin Gerrard 
+             <img class="horse" src="../static/theblog/horse.jpeg">
+            </div>
+      
+            <nav>
+                
+                <ul class="navbar">
+                    {%if cat_menu%}
+                    {%for item in cat_menu%}
+                    <li><a href="{% url 'category' item|slugify%}">{{item}}</a></li>
+                    {%endfor%}
+                    {%endif%}
+                  </ul>
+            </nav>
+        </header>
+    
+        <main>
+            <div id="alphabetBackground">
+            </div>     
+            <div id="project_grid">
+                <!-- Own Website -->
+                {% for post in object_list%}
+                <div>
+                    <div class="title_same_line">
+                        <h2>{{post.title}}</h2>
+                    </div>
+                    <a href="{%url 'article-detail' post.pk %}" >
+                     {%if post.cover_image%}
+                    <img class="project_img" src="{{ post.cover_image.url }}" ></a>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+        
+        </main>
+    
+</body>
+</html>

@@ -1,0 +1,11 @@
+
+{% extends "base.html" %}
+{% block content %}
+        {%if post.article_image%}
+        <img class="article" src="{{post.article_image.url}}" >
+        {%endif%}
+        {%for p in photos%}
+           <img class="article" src="{{p.images.url}}" >
+        {%endfor%}
+{% endblock %}
+

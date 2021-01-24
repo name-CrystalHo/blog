@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+
+            {% if 'about' in curr_url%}
+ <!-- CREATE ABOUT ME PAGE HERE!!!!!!!!!!!! -->
+   {%for me in about%}
+   <img class="project_img" style="width:100px;height:100px;" scr="{{ me.picture.url }}">
+    {{me.description}}
+   {%endfor%}
+
+<!-- CREATE ABOUT ME PAGE HERE!!!!!!!!!!!! -->
+            {%elif category_posts%}
+            <div id="project_grid">
+                <!-- Own Website -->
+                {% for post in category_posts%}
+                <div>
+                    <div class="title_same_line">
+                        <h2>{{post.title}}</h2>
+                    </div>
+                    <a href="{%url 'article-detail' post.pk %}" >
+                     {%if post.cover_image%}
+                    <img class="project_img" src="{{ post.cover_image.url }}" ></a>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+            {%else%}
+            <h2>Sorry Page Doesn't Exist</h2>
+            {%endif%}
+{%endblock%}

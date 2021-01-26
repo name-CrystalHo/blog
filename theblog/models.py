@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-
+from ckeditor.fields import RichTextField
 class Category(models.Model):
     name=models.CharField(max_length=255)
     def __str__(self):
@@ -22,5 +22,6 @@ class PostArticleImage(models.Model):
         return self.post.title
 
 class AboutMe(models.Model):
-    description= models.CharField(max_length=2000)
+    description= RichTextField(blank=True,null=True)
     picture=models.ImageField(null=True, blank=True, upload_to="images/")
+    resume=models.FileField(null=True, blank=True, upload_to="images/")

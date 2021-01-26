@@ -14,13 +14,20 @@
         <header>
             <div class=heading>
              <div class="title">Caitlin Gerrard</div>
-             <img class="horse" src="../../static/theblog/horse.jpg">
+             <img class="horse" src="../../static/theblog/horse.jpeg">
             </div>
             <nav>
                 <ul class="navbar">
                     {%if cat_menu%}
-                    {%for item in cat_menu%}       
-                    <li class="{% if item|slugify in curr_url%}active{%endif%}"><a href="{% url 'category' item|slugify%}">{{item}}</a></li>
+                    {%for item in cat_menu%}   
+                    {%if item.name  not in "about"%}    
+                     <li class="{% if item|slugify in curr_url%}active{%endif%}"><a href="{% url 'category' item|slugify%}">{{item}}</a></li>
+                    {%endif%}
+                    {%endfor%}
+                    {%for item in cat_menu%}   
+                    {%if item.name  in "about"%}    
+                     <li class="{% if item|slugify in curr_url%}active{%endif%}"><a href="{% url 'category' item|slugify%}">{{item}}</a></li>
+                    {%endif%}
                     {%endfor%}
                     {%endif%}
                   </ul>

@@ -4,8 +4,13 @@
             {% if 'about' in curr_url%}
  <!-- CREATE ABOUT ME PAGE HERE!!!!!!!!!!!! -->
    {%for me in about%}
-   <img class="project_img" style="width:100px;height:100px;" scr="{{ me.picture.url }}">
-    {{me.description}}
+   <div class="aboutme">
+    <img class="about_img" src="{{ me.picture.url }}" >
+   <div class=aboutme_txt>
+       <p>{{me.description|safe}}</p>
+     <a href="{{me.resume.url}}">Resume</a>
+    </div> 
+    </div>
    {%endfor%}
 
 <!-- CREATE ABOUT ME PAGE HERE!!!!!!!!!!!! -->

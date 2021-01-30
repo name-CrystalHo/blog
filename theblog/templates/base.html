@@ -18,7 +18,7 @@
             </div>
             <nav>
                 <ul class="navbar">
-                    {%if cat_menu%}
+            
                     {%for item in cat_menu%}   
                     {%if item.name  not in "about"%}    
                      <li class="{% if item|slugify in curr_url%}active{%endif%}"><a href="{% url 'category' item|slugify%}">{{item}}</a></li>
@@ -27,7 +27,7 @@
                     {%for item in cat_menu%}   
                     {%if item.name  in "about"%}    
                      <li class="{% if item|slugify in curr_url%}active{%endif%}"><a href="{% url 'category' item|slugify%}">{{item}}</a></li>
-                    {%endif%}
+        
                     {%endfor%}
                     {%endif%}
                   </ul>

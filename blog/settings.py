@@ -26,7 +26,7 @@ SECRET_KEY = '6tzd&u@)aigf6p&nxhujvalb!h+uo8(i9-t8zc=$5dd(09#in('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['virt.eba-ksnxphqp.us-east-1.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['newvirt.eba-ksnxphqp.us-east-1.elasticbeanstalk.com']
 
 
 # Application definition
@@ -82,7 +82,7 @@ DATABASES = {
         'NAME': 'ebdb',
         'USER':'DBUser',
         'PASSWORD':'bsjoca1965',
-        'HOST':'caitlingerrardblog.cffnqorxelzr.us-east-1.rds.amazonaws.com',
+        'HOST':'aatsxodkv2rh64.cffnqorxelzr.us-east-1.rds.amazonaws.com',
         'PORT':'5432',
     }
 }

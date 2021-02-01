@@ -151,7 +151,7 @@ STATICFILESDIRS=[
     os.path.join(BASE_DIR,'static'),  
     '../theblog/static',
 ]
-STATIC_ROOT=os.path.join(os.path.dirname(BASE_DIR),"static_cdn")
+STATIC_ROOT='/static/'
 MEDIA_URL='/media/'
 
 MEDIA_ROOT=os.path.join(BASE_DIR,'media')

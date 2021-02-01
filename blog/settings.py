@@ -76,16 +76,16 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'ebdb',
-        'USER':'DBUser',
-        'PASSWORD':'bsjoca1965',
-        'HOST':'caitlingerrardblog.cffnqorxelzr.us-east-1.rds.amazonaws.com',
-        'PORT':'5432',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'ebdb',
+#         'USER':'DBUser',
+#         'PASSWORD':'bsjoca1965',
+#         'HOST':'caitlingerrardblog.cffnqorxelzr.us-east-1.rds.amazonaws.com',
+#         'PORT':'5432',
+#     }
+# }
 # if 'RDS_DB_NAME' in os.environ:
 #     DATABASES = {
 #         'default': {

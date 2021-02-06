@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 
 from pathlib import Path
 import os
-import django_heroku
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '6tzd&u@)aigf6p&nxhujvalb!h+uo8(i9-t8zc=$5dd(09#in('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -78,11 +78,36 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'ebdb',
+        'USER':'DBUser',
+        'PASSWORD':'bsjoca1965',
+        'HOST':'aatsxodkv2rh64.cffnqorxelzr.us-east-1.rds.amazonaws.com',
+        'PORT':'5432',
     }
 }
-
+# if 'RDS_DB_NAME' in os.environ:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'PostgreSQL',
+#             'NAME': os.environ['aaanofk4p3eimm'],
+#             'USER': os.environ['DBUser'],
+#             'PASSWORD': os.environ['bsjoca1965'],
+#             'HOST': os.environ['RDS_HOSTNAME'],
+#             'PORT': os.environ['RDS_PORT'],
+#         }
+#     }
+# else:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#             'NAME': 'iotd',
+#             'USER': 'iotd',
+#             'PASSWORD': 'iotd',
+#             'HOST': 'localhost',
+#             'PORT': '5432',
+#         }
+#     }
 
 # Password validation
 # https://docs.djangoproject.com/en/dev/ref/settings/#auth-password-validators
@@ -126,8 +151,7 @@ STATICFILESDIRS=[
     os.path.join(BASE_DIR,'static'),  
     '../theblog/static',
 ]
-STATIC_ROOT=os.path.join(os.path.dirname(BASE_DIR),"static_cdn")
+STATIC_ROOT='/static/'
 MEDIA_URL='/media/'
 
 MEDIA_ROOT=os.path.join(BASE_DIR,'media')
-django_heroku.settings(locals())

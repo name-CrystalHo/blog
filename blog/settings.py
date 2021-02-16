@@ -46,13 +46,17 @@ AWS_STORAGE_BUCKET_NAME='caitlin-blog-media'
 AWS_S3_REGION_NAME='us-east-1'
 AWS_ACCESS_KEY_ID='AKIAJKOM2EI6ADERM3IQ'
 AWS_SECRET_ACCESS_KEY='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'
-AWS_S3_CUSTOM_DOMAIN='s.s3.amazonaws.com'
+AWS_S3_CUSTOM_DOMAIN='caitlin-blog-media.s3.amazonaws.com'
 AWS_DEFAULT_ACL=None 
 
-STATICFILES_LOCATION='static'
-staticfiles_storage='custom_storages.StaticStorage'
-MEDIAFILES_LOCATION='media'
-DEFAULT_FILE_STORAGE='custom_storages.MediaStorage'
+AWS_LOCATION = 'static'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'mysite/static'),
+]
+STATIC_URL = 'http://newvirt.eba-ksnxphqp.us-east-1.elasticbeanstalk.com/'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+DEFAULT_FILE_STORAGE = 'mysite.storage_backends.MediaStorage'  # <-- here is where we reference it
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

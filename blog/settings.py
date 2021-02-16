@@ -40,8 +40,19 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'theblog',
     'ckeditor',
+    'storages',
 ]
+AWS_STORAGE_BUCKET_NAME='caitlin-blog-media'
+AWS_S3_REGION_NAME='us-east-1'
+AWS_ACCESS_KEY_ID='AKIAJKOM2EI6ADERM3IQ'
+AWS_SECRET_ACCESS_KEY='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'
+AWS_S3_CUSTOM_DOMAIN='s.s3.amazonaws.com'
+AWS_DEFAULT_ACL=None 
 
+STATICFILES_LOCATION='static'
+staticfiles_storage='custom_storages.StaticStorage'
+MEDIAFILES_LOCATION='media'
+DEFAULT_FILE_STORAGE='custom_storages.MediaStorage'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

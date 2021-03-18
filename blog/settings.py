@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 
 from pathlib import Path
 import os
+# from .settings_local import *
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '6tzd&u@)aigf6p&nxhujvalb!h+uo8(i9-t8zc=$5dd(09#in('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['newvirt.eba-ksnxphqp.us-east-1.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -42,21 +43,27 @@ INSTALLED_APPS = [
     'ckeditor',
     'storages',
 ]
-AWS_STORAGE_BUCKET_NAME='caitlin-blog-media'
-AWS_S3_REGION_NAME='us-east-1'
-AWS_ACCESS_KEY_ID='AKIAJKOM2EI6ADERM3IQ'
-AWS_SECRET_ACCESS_KEY='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'
-AWS_S3_CUSTOM_DOMAIN='caitlin-blog-media.s3.amazonaws.com'
-AWS_DEFAULT_ACL=None 
+# AWS_STORAGE_BUCKET_NAME='caitlin-blog-media'
+# AWS_S3_REGION_NAME='us-east-1'
+# # AWS_S3_CUSTOM_DOMAIN='caitlin-blog-media.s3.amazonaws.com'
+# AWS_S3_FILE_OVERWRITE=False 
+# AWS_DEFAULT_ACL=None 
 
-AWS_LOCATION = 'static'
+# AWS_LOCATION = 'static'
+# STATIC_ROOT='/static/'
+# STATICFILESDIRS=[
+#     os.path.join(BASE_DIR,'static'),  
+#     '../theblog/static',
+# ]
+# # MEDIA_URL = 'http://newvirt.eba-ksnxphqp.us-east-1.elasticbeanstalk.com/'+'media/'
+# # MEDIA_ROOT = MEDIA_URL
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'mysite/static'),
-]
-STATIC_URL = 'http://newvirt.eba-ksnxphqp.us-east-1.elasticbeanstalk.com/'
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-DEFAULT_FILE_STORAGE = 'mysite.storage_backends.MediaStorage'  # <-- here is where we reference it
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# STATIC_URL = 'http://newvirt.eba-ksnxphqp.us-east-1.elasticbeanstalk.com/'+'static/'
+# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
+# # DEFAULT_FILE_STORAGE = 'blog.storage_backends.MediaStorage'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -91,16 +98,16 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'ebdb',
-        'USER':'DBUser',
-        'PASSWORD':'bsjoca1965',
-        'HOST':'aatsxodkv2rh64.cffnqorxelzr.us-east-1.rds.amazonaws.com',
-        'PORT':'5432',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'ebdb',
+#         'USER':'DBUser',
+#         'PASSWORD':'bsjoca1965',
+#         'HOST':'aatsxodkv2rh64.cffnqorxelzr.us-east-1.rds.amazonaws.com',
+#         'PORT':'5432',
+#     }
+# }
 # if 'RDS_DB_NAME' in os.environ:
 #     DATABASES = {
 #         'default': {
@@ -113,16 +120,22 @@ DATABASES = {
 #         }
 #     }
 # else:
-#     DATABASES = {
+# DATABASES = {
 #         'default': {
 #             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#             'NAME': 'iotd',
-#             'USER': 'iotd',
-#             'PASSWORD': 'iotd',
+#             'NAME': 'CAITLIN_DB',
+#             'USER': 'CAITLIN_BLOG_SERVER',
+#             'PASSWORD': 'bsjoca1965',
 #             'HOST': 'localhost',
 #             'PORT': '5432',
 #         }
 #     }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/dev/ref/settings/#auth-password-validators

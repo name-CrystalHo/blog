@@ -33,7 +33,7 @@ header
 
     align-items: baseline;
     background-color: #e0f2f1;
-    background: url('mountain.png');
+    background: url("/static/theblog/mountain.png'");
     background-repeat: no-repeat;
     background-size:100% 100%;
     background-position: center;

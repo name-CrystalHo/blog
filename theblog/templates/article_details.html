@@ -3,9 +3,14 @@
 {% block content %}
         {%if post.article_image%}
         <img class="article" src="{{post.article_image.url}}" >
+        <br>
         {%endif%}
         {%for p in photos%}
            <img class="article" src="{{p.images.url}}" >
+           <br>
         {%endfor%}
+        {%if post.article_text%}
+        <p>{{post.article_text|safe}}</p>
+        {%endif%}
 {% endblock %}
 

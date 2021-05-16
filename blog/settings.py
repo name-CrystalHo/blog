@@ -90,7 +90,7 @@ DATABASES = {
         'NAME': 'caitlinblog_db',
         'USER':'caitlinDB',
         'PASSWORD':'bsjoca1965',
-        'HOST':'database-1.cffnqorxelzr.us-east-1.rds.amazonaws.com',
+        'HOST':'aa1pbhn5fptqhg7.cffnqorxelzr.us-east-1.rds.amazonaws.com',
         'PORT':'5432',
     }
 }

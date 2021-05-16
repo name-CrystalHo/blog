@@ -23,11 +23,11 @@ SECRET_KEY = '6tzd&u@)aigf6p&nxhujvalb!h+uo8(i9-t8zc=$5dd(09#in('
 # AWS_ACCESS_KEY_ID = config('aws_id')
 # AWS_SECRET_ACCESS_KEY = config('aws_secret')
 # AWS_STORAGE_BUCKET_NAME =config('s3_name')
-AWS_S3_FILE_OVERWRITE = False
-AWS_DEFAULT_ACL = None
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-ADMIN_MEDIA_PREFIX = '/static/admin/' 
+# AWS_S3_FILE_OVERWRITE = False
+# AWS_DEFAULT_ACL = None
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# ADMIN_MEDIA_PREFIX = '/static/admin/' 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 

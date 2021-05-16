@@ -11,16 +11,22 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 """
 
 from pathlib import Path
+from decouple import config
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-SECRET_KEY = '6tzd&u@)aigf6p&nxhujvalb!h+uo8(i9-t8zc=$5dd(09#in('
+SECRET_KEY = config('SECRET_KEY')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/dev/howto/deployment/checklist/
-
-
+AWS_ACCESS_KEY_ID = config('aws_id')
+AWS_SECRET_ACCESS_KEY = config('aws_secret')
+AWS_STORAGE_BUCKET_NAME =config('s3_name')
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
@@ -38,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'theblog',
     'ckeditor',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -87,10 +94,10 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'caitlinblog_db',
-        'USER':'caitlinDB',
-        'PASSWORD':'bsjoca1965',
-        'HOST':'aa1pbhn5fptqhg7.cffnqorxelzr.us-east-1.rds.amazonaws.com',
+        'NAME': config('db_name'),
+        'USER':config('db_user'),
+        'PASSWORD':config('db_password'),
+        'HOST':config('db_host'),
         'PORT':'5432',
     }
 }

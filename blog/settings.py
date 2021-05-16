@@ -13,11 +13,21 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 from pathlib import Path
 from decouple import config
 import os
+import subprocess
+import ast
 
+# def get_environ_vars():
+#         completed_process = subprocess.run(
+#             ['/opt/elasticbeanstalk/bin/get-config', 'environment'],
+#             stdout=subprocess.PIPE,
+#             text=True,
+#             check=True
+#         )
+
+#         return ast.literal_eval(completed_process.stdout)
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-SECRET_KEY = config('SECRET_KEY')
-
+SECRET_KEY ='6tzd&u@)aigf6p&nxhujvalb!h+uo8(i9-t8zc=$5dd(09#in('
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/dev/howto/deployment/checklist/
 # AWS_ACCESS_KEY_ID = config('aws_id')
@@ -91,38 +101,39 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 #         'PORT':'8000',
 #     }
 # }
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('db_name'),
-        'USER':config('db_user'),
-        'PASSWORD':config('db_password'),
-        'HOST':config('db_host'),
-        'PORT':'5432',
-    }
-}
-# if 'RDS_DB_NAME' in os.environ:
-#     DATABASES = {
-#         'default': {
-#             'ENGINE': 'PostgreSQL',
-#             'NAME': os.environ['aaanofk4p3eimm'],
-#             'USER': os.environ['DBUser'],
-#             'PASSWORD': os.environ['bsjoca1965'],
-#             'HOST': os.environ['RDS_HOSTNAME'],
-#             'PORT': os.environ['RDS_PORT'],
-#         }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': config('db_name'),
+#         'USER':config('db_user'),
+#         'PASSWORD':config('db_password'),
+#         'HOST':config('db_host'),
+#         'PORT':'5432',
 #     }
+# }
+# if 'RDS_HOSTNAME' in os.environ:
+DATABASES = {
+         'default': {
+         '    ENGINE': 'django.db.backends.mysql',
+              'NAME': os.environ['RDS_DB_NAME'],
+              'USER': os.environ['RDS_USERNAME'],
+              'PASSWORD': os.environ['RDS_PASSWORD'],
+              'HOST': os.environ['RDS_HOSTNAME'],
+              'PORT': os.environ['RDS_PORT'],
+     }
+ }
 # else:
-    # DATABASES = {
-    #     'default': {
-    #         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    #         'NAME': 'iotd',
-    #         'USER': 'iotd',
-    #         'PASSWORD': 'bsjoca1965',
-    #         'HOST': 'localhost',
-    #         'PORT': '5432',
-    #     }
-    # }
+#      env_vars = get_environ_vars()
+#      DATABASES = {
+#          'default': {
+#          'ENGINE': 'django.db.backends.mysql',
+#          'NAME': env_vars['RDS_DB_NAME'],
+#          'USER': env_vars['RDS_USERNAME'],
+#          'PASSWORD': env_vars['RDS_PASSWORD'],
+#          'HOST': env_vars['RDS_HOSTNAME'],
+#          'PORT': env_vars['RDS_PORT'],
+#      }
+#  }
 # DATABASES ={
 #     'default':{
 #         'ENGINE':'djago.db.backends.dqlite3',

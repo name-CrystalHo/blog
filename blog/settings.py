@@ -96,10 +96,10 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 if 'RDS_DB_NAME' in os.environ:
     DATABASES = {
         'default': {
-            'ENGINE': 'PostgreSQL',
-            'NAME': os.environ['aaanofk4p3eimm'],
-            'USER': os.environ['DBUser'],
-            'PASSWORD': os.environ['bsjoca1965'],
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': os.environ['RDS_DB_NAME'],
+            'USER': os.environ['RDS_USERNAME'],
+            'PASSWORD': os.environ['RDS_PASSWORD'],
             'HOST': os.environ['RDS_HOSTNAME'],
             'PORT': os.environ['RDS_PORT'],
         }

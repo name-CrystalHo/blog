@@ -82,39 +82,39 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 
-# DATABASES = {
+
+
+# if 'RDS_DB_NAME' in os.environ:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#             'NAME': os.environ['RDS_DB_NAME'],
+#             'USER': os.environ['RDS_USERNAME'],
+#             'PASSWORD': os.environ['RDS_PASSWORD'],
+#             'HOST': os.environ['RDS_HOSTNAME'],
+#             'PORT': os.environ['RDS_PORT'],
+#         }
+#     }
+# else:
+#    DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'postgres',
-#         'USER':'caitlinDB',
-#         'PASSWORD':'bsjoca1965',
-#         'HOST':'localhost',
-#         'PORT':'8000',
+#         'NAME': config('db_name'),
+#         'USER':config('db_user'),
+#         'PASSWORD':config('db_password'),
+#         'HOST':config('db_host'),
+#         'PORT':'5432',
 #     }
 # }
-
-if 'RDS_DB_NAME' in os.environ:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': os.environ['RDS_DB_NAME'],
-            'USER': os.environ['RDS_USERNAME'],
-            'PASSWORD': os.environ['RDS_PASSWORD'],
-            'HOST': os.environ['RDS_HOSTNAME'],
-            'PORT': os.environ['RDS_PORT'],
-        }
-    }
-else:
-   DATABASES = {
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('db_name'),
-        'USER':config('db_user'),
-        'PASSWORD':config('db_password'),
-        'HOST':config('db_host'),
+        'NAME': 'caitlinblog_db',
+        'USER':'caitlinDB',
+        'PASSWORD':'bsjoca1965',
+        'HOST':'aa1nvi9vpjq6ac.cffnqorxelzr.us-east-1.rds.amazonaws.com',
         'PORT':'5432',
     }
-}
 # DATABASES ={
 #     'default':{
 #         'ENGINE':'djago.db.backends.dqlite3',

@@ -15,16 +15,16 @@ import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+SECRET_KEY = '6tzd&u@)aigf6p&nxhujvalb!h+uo8(i9-t8zc=$5dd(09#in('
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/dev/howto/deployment/checklist/
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['http://caitlin-web.eba-wzpq9wqi.us-east-1.elasticbeanstalk.com']
 
 
 # Application definition

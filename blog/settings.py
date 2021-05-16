@@ -20,13 +20,13 @@ SECRET_KEY = config('SECRET_KEY')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/dev/howto/deployment/checklist/
-AWS_ACCESS_KEY_ID = config('aws_id')
-AWS_SECRET_ACCESS_KEY = config('aws_secret')
-AWS_STORAGE_BUCKET_NAME =config('s3_name')
-AWS_S3_FILE_OVERWRITE = False
-AWS_DEFAULT_ACL = None
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# AWS_ACCESS_KEY_ID = config('aws_id')
+# AWS_SECRET_ACCESS_KEY = config('aws_secret')
+# AWS_STORAGE_BUCKET_NAME =config('s3_name')
+# AWS_S3_FILE_OVERWRITE = False
+# AWS_DEFAULT_ACL = None
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 

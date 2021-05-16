@@ -115,6 +115,7 @@ DATABASES = {
         'HOST':'aa1nvi9vpjq6ac.cffnqorxelzr.us-east-1.rds.amazonaws.com',
         'PORT':'5432',
     }
+}
 # DATABASES ={
 #     'default':{
 #         'ENGINE':'djago.db.backends.dqlite3',

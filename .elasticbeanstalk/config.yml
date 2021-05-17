@@ -11,7 +11,7 @@ environment-defaults:
 global:
   application_name: caitlin-blog
   default_ec2_keyname: caitlin-key
-  default_platform: Python 3.8 running on 64bit Amazon Linux 2
+  default_platform: Python 3.6 running on 64bit Amazon Linux
   default_region: us-east-1
   include_git_submodules: true
   instance_profile: null

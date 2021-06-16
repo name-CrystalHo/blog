@@ -1,6 +1,7 @@
 branch-defaults:
   main:
-    environment: Test-env
+    environment: caitlin-env
+    group_suffix: null
 environment-defaults:
   Test-env:
     branch: null
@@ -12,14 +13,16 @@ environment-defaults:
     branch: null
     repository: null
 global:
-  application_name: test
+  application_name: caitlinEB
+  branch: null
   default_ec2_keyname: caitlins-key
-  default_platform: Python 3.7 running on 64bit Amazon Linux 2
+  default_platform: Python 3.6
   default_region: us-east-1
   include_git_submodules: true
   instance_profile: null
   platform_name: null
   platform_version: null
   profile: eb-cli
+  repository: null
   sc: git
   workspace_type: Application

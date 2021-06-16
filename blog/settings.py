@@ -23,11 +23,11 @@ SECRET_KEY = '6tzd&u@)aigf6p&nxhujvalb!h+uo8(i9-t8zc=$5dd(09#in('
 # AWS_ACCESS_KEY_ID = config('aws_id')
 # AWS_SECRET_ACCESS_KEY = config('aws_secret')
 # AWS_STORAGE_BUCKET_NAME =config('s3_name')
-# AWS_S3_FILE_OVERWRITE = False
-# AWS_DEFAULT_ACL = None
-# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-# ADMIN_MEDIA_PREFIX = '/static/admin/' 
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+ADMIN_MEDIA_PREFIX = '/static/admin/' 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
@@ -84,45 +84,34 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 
 
 
-if 'RDS_DB_NAME' in os.environ:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': os.environ['RDS_DB_NAME'],
-            'USER': os.environ['RDS_USERNAME'],
-            'PASSWORD': os.environ['RDS_PASSWORD'],
-            'HOST': os.environ['RDS_HOSTNAME'],
-            'PORT': os.environ['RDS_PORT'],
-        }
-    }
-else:
-   DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('db_name'),
-        'USER':config('db_user'),
-        'PASSWORD':config('db_password'),
-        'HOST':config('db_host'),
-        'PORT':'5432',
-    }
-}
-# DATABASES = {
+# if 'RDS_DB_NAME' in os.environ:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#             'NAME': os.environ['RDS_DB_NAME'],
+#             'USER': os.environ['RDS_USERNAME'],
+#             'PASSWORD': os.environ['RDS_PASSWORD'],
+#             'HOST': os.environ['RDS_HOSTNAME'],
+#             'PORT': os.environ['RDS_PORT'],
+#         }
+#     }
+# else:
+#    DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'caitlinblog_db',
-#         'USER':'caitlinDB',
-#         'PASSWORD':'bsjoca1965',
-#         'HOST':'aa1nvi9vpjq6ac.cffnqorxelzr.us-east-1.rds.amazonaws.com',
+#         'NAME': config('db_name'),
+#         'USER':config('db_user'),
+#         'PASSWORD':config('db_password'),
+#         'HOST':config('db_host'),
 #         'PORT':'5432',
 #     }
 # }
-# DATABASES ={
-#     'default':{
-#         'ENGINE':'djago.db.backends.dqlite3',
-#         'NAME':BASE_DIR/'db.sqlite3'
-#     }
-# }
-# Password validation
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'mydatabase',
+    }
+}
 # https://docs.djangoproject.com/en/dev/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [

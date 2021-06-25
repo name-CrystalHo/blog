@@ -91,6 +91,9 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 
 
 # iam (check out policies)
+#aws secret manager, maybe
+#parameter store 
+#Key management store kms 
 if 'RDS_DB_NAME' in os.environ:
     DATABASES = {
         'default': {

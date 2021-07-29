@@ -14,3 +14,6 @@ from django.core.wsgi import get_wsgi_application
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'blog.settings')
 
 application = get_wsgi_application()
+
+sys.path.insert(0, '/opt/python/current/blog/')   # I use ElasticBeanstalk, modify to your project path
+

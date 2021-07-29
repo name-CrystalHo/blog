@@ -10,6 +10,6 @@ https://docs.djangoproject.com/en/dev/howto/deployment/wsgi/
 import sys, os
 
 from django.core.wsgi import get_wsgi_application
-os.environ['DJANGO_SETTINGS_MODULE'] = 'blog.settings'
+os.environ["DJANGO_SETTINGS_MODULE"] = "{{ blog }}.settings"
 application = get_wsgi_application()
 

@@ -105,18 +105,18 @@ if 'RDS_DB_NAME' in os.environ:
             'PORT': os.environ.get('RDS_PORT'),
         }
     }
-# else:
-#    DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'ebdb',
-#         'USER':config('db_user'),
-#         'PASSWORD':config('db_password'),
-#         'HOST':config('db_host'),
-#         'PORT':'5432',
-#     }
-# }
-
+else:
+   DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'ebdb',
+        'USER':config('db_user'),
+        'PASSWORD':config('db_password'),
+        'HOST':config('db_host'),
+        'PORT':'5432',
+    }
+}
+print(os.environ.get('RDS_PASSWORD'))
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',

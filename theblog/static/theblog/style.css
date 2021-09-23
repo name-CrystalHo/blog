@@ -160,8 +160,16 @@ main
   
   
 }
-
 .article{
+    object-fit: cover;
+    margin-right: auto;
+    margin-left: auto;
+    width:30%;
+    position:relative;
+   
+}
+
+.articles{
     object-fit: cover;
     margin-right: auto;
     margin-left: auto;
@@ -169,7 +177,10 @@ main
     position:relative;
    
 }
-
+.article_text{
+    margin-right:15%;
+    margin-left:15%;
+}
 .aboutme{
     display:flex;
     width:70%;
@@ -192,6 +203,10 @@ main
     position: relative; 
     
 }
+#project_grid div{
+    justify-content: flex-end;
+}
+
 @media (max-width: 600px) {
 
     #project-grid {

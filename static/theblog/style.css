@@ -33,7 +33,7 @@ header
 
     align-items: baseline;
     background-color: #e0f2f1;
-    background: url("/static/theblog/mountain.png'");
+    background: url("/theblog/mountain.png");
     background-repeat: no-repeat;
     background-size:100% 100%;
     background-position: center;
@@ -178,8 +178,8 @@ main
    
 }
 .article_text{
-    margin-right:10%;
-    margin-left:10%;
+    margin-right:15%;
+    margin-left:15%;
 }
 .aboutme{
     display:flex;
@@ -219,10 +219,14 @@ main
         object-fit: cover;
         margin-right: auto;
         margin-left: auto;
-        width:30%;
+        width:90%;
         position:relative;
        
     }
+   .about_img{
+    width:50%;
+    height:80%
+}
 
 }
 /* Container of each project */

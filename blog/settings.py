@@ -33,7 +33,7 @@ DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 ADMIN_MEDIA_PREFIX = '/static/admin/' 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 # Ckeditor
 AWS_QUERYSTRING_AUTH = False
 
@@ -51,7 +51,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'theblog',
     'ckeditor',
-    'storages',
 ]
 
 MIDDLEWARE = [

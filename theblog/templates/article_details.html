@@ -1,16 +1,19 @@
 
 {% extends "base.html" %}
 {% block content %}
+        {%if post.show_title%}
+        <div class="title_same_line">{{post.title}}</div>
+        {%endif%}
         {%if post.article_image%}
         <img class="article" src="{{post.article_image.url}}" >
         <br>
         {%endif%}
         {%for p in photos%}
-           <img class="article" src="{{p.images.url}}" >
+           <img class="articles" src="{{p.images.url}}" >
            <br>
         {%endfor%}
         {%if post.article_text%}
-        <p>{{post.article_text|safe}}</p>
+        <div class="article_text"><p>{{post.article_text|safe}}</p></div>
         {%endif%}
 {% endblock %}
 

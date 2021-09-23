@@ -33,7 +33,7 @@ DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 ADMIN_MEDIA_PREFIX = '/static/admin/' 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 # Ckeditor
 AWS_QUERYSTRING_AUTH = False
 
@@ -115,7 +115,6 @@ else:
         'PORT':'5432',
     }
 }
-print(os.environ.get('RDS_PASSWORD'))
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',

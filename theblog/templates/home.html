@@ -2,6 +2,7 @@
 {% block content %}
             <div id="project_grid">
                 {% for post in object_list%}
+                {%if post.category in "fun"%}
                 <div>
                     <div class="title_same_line">
                         <h2>{{post.title}}</h2>
@@ -11,6 +12,7 @@
                     <img class="project_img" src="{{ post.cover_image.url }}" ></a>
                     {% endif %}
                 </div>
+                {% endif %}
                 {% endfor %}
             </div>
 {% endblock %}

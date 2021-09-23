@@ -165,10 +165,11 @@ main
     object-fit: cover;
     margin-right: auto;
     margin-left: auto;
-    width:30%;
+    width:65%;
     position:relative;
    
 }
+
 .aboutme{
     display:flex;
     width:70%;
@@ -203,6 +204,18 @@ main
         position: relative; 
         
      }
+     .articles{
+        object-fit: cover;
+        margin-right: auto;
+        margin-left: auto;
+        width:90%;
+        position:relative;
+       
+    }
+    .article_text{
+        margin-right:0;
+        margin-left:0;
+    }
 
 }
 /* Container of each project */

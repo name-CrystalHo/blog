@@ -12,6 +12,7 @@ class Post(models.Model):
     cover_image=models.ImageField(null=True, blank=True, upload_to="images/")
     article_image=models.ImageField(null=True, blank=True, upload_to="images/")
     article_text=RichTextField(blank=True,null=True)
+    show_title=models.BooleanField(default=True)
     date = models.DateTimeField(auto_now_add=True,null=True, blank=True)
     def __str__(self):
         return self.title +' | '+ str(self.category)

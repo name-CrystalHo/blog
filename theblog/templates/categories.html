@@ -8,7 +8,9 @@
     <img class="about_img" src="{{ me.picture.url }}" >
    <div class=aboutme_txt>
        <p>{{me.description|safe}}</p>
-     <a href="{{me.resume.url}}">Resume</a>
+       {%if me.resume.url%}
+        <a href="{{me.resume.url}}">Resume</a>
+        {% endif %}
     </div> 
     </div>
    {%endfor%}
